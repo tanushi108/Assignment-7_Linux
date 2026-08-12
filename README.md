@@ -1,7 +1,5 @@
 # Assignment-7_Linux
 
-# Assignment 7 — Maven Build Management Utility
-
 ## 📌 Objective
 
 The objective of this assignment is to create a Bash utility named `buildMaven.sh` to manage common build operations of a Maven-based Java project.
@@ -109,6 +107,7 @@ Check:
 ```bash
 ls /opt/tomcat9
 ```
+<img width="1327" height="254" alt="image" src="https://github.com/user-attachments/assets/3cb956c5-b20b-4b0a-b0a8-b7dca4e13557" />
 
 ---
 
@@ -196,6 +195,8 @@ Command:
 ```bash
 ./buildMaven.sh -a
 ```
+<img width="1365" height="399" alt="image" src="https://github.com/user-attachments/assets/dadb5e7b-ade1-4f9b-b681-66255923727a" />
+
 
 This generates the Maven project artifact.
 
@@ -216,6 +217,7 @@ Example:
 ```text
 target/Spring3HibernateApp.war
 ```
+<img width="965" height="528" alt="image" src="https://github.com/user-attachments/assets/bdd8ff4f-4582-4737-8d46-80256f7269a6" />
 
 ## Figure — Artifact Generation
 
@@ -245,6 +247,11 @@ Command:
 ./buildMaven.sh -i
 ```
 
+<img width="1365" height="461" alt="image" src="https://github.com/user-attachments/assets/6a52ee2e-33b1-4be6-8ac1-fe681795ae98" />
+
+<img width="1346" height="546" alt="image" src="https://github.com/user-attachments/assets/78f4150b-f93d-451a-9593-fdf068e6864a" />
+
+
 Equivalent Maven command:
 
 ```bash
@@ -256,6 +263,8 @@ The artifact is installed into the local Maven repository:
 ```text
 ~/.m2/repository/
 ```
+<img width="1270" height="143" alt="image" src="https://github.com/user-attachments/assets/1279bca2-7e5d-421b-a0b5-6c0cc5692670" />
+
 
 ## Figure — Maven Local Repository
 
@@ -273,6 +282,7 @@ Check:
 ```bash
 ls ~/.m2/repository/
 ```
+<img width="1089" height="408" alt="image" src="https://github.com/user-attachments/assets/ea770275-3151-4058-a0e7-2a264b497b89" />
 
 ---
 
@@ -313,6 +323,11 @@ flowchart TD
     C --> D[Violations / Report]
 ```
 
+<img width="525" height="67" alt="image" src="https://github.com/user-attachments/assets/99c354aa-e646-4ea6-8a39-384f0b4bafbb" />
+
+<img width="917" height="34" alt="image" src="https://github.com/user-attachments/assets/78f8543b-14de-477f-877b-343a5e1f53c1" />
+
+
 ---
 
 ## 🔹 FindBugs
@@ -332,6 +347,9 @@ NM_FIELD_NAMING_CONVENTION
 PT_RELATIVE_PATH_TRAVERSAL
 SE_NO_SERIALVERSIONID
 ```
+<img width="1365" height="492" alt="image" src="https://github.com/user-attachments/assets/fe2cc46f-0a80-41d8-9029-0cb8c5fa5be6" />
+
+<img width="743" height="650" alt="image" src="https://github.com/user-attachments/assets/2c939e8d-b34d-401c-ada7-b7f52590dbcb" />
 
 ### Figure
 
@@ -372,6 +390,9 @@ flowchart TD
     C --> D[PMD Report]
 ```
 
+<img width="893" height="402" alt="image" src="https://github.com/user-attachments/assets/3fbdacb0-9657-49a5-b7dd-e14a40ab5038" />
+
+
 ---
 
 # 4️⃣ Unit Testing
@@ -383,6 +404,10 @@ Command:
 ```bash
 ./buildMaven.sh -t surefire
 ```
+<img width="1365" height="472" alt="image" src="https://github.com/user-attachments/assets/6f3d3ac0-abd2-409a-91d2-28031f8e61ef" />
+
+<img width="1331" height="690" alt="image" src="https://github.com/user-attachments/assets/bd7b2b8f-09a4-435b-8d8b-39f6abc1f5b2" />
+
 
 Equivalent Maven operation:
 
@@ -401,6 +426,7 @@ Check:
 ```bash
 ls target/surefire-reports/
 ```
+<img width="884" height="98" alt="image" src="https://github.com/user-attachments/assets/d3bd8daa-ea8e-48cb-8184-b1771a8e1599" />
 
 ---
 
@@ -514,6 +540,8 @@ Command:
 ```bash
 ./buildMaven.sh -d
 ```
+<img width="733" height="333" alt="image" src="https://github.com/user-attachments/assets/d6db5a09-a162-4e4e-8b69-a067252f0c33" />
+
 
 The deployment process copies the generated WAR file to:
 
@@ -526,6 +554,7 @@ Check:
 ```bash
 sudo ls -lh /opt/tomcat9/webapps/
 ```
+<img width="728" height="168" alt="image" src="https://github.com/user-attachments/assets/546bfb33-ac20-407a-b61a-baf7e027a804" />
 
 ---
 
@@ -541,188 +570,7 @@ flowchart LR
     F --> G[Web Application]
 ```
 
----
-
-# 7️⃣ Tomcat 9
-
-Tomcat is installed at:
-
-```text
-/opt/tomcat9
-```
-
-Important directories:
-
-```text
-/opt/tomcat9/
-│
-├── bin/
-├── conf/
-├── lib/
-├── logs/
-├── temp/
-├── webapps/
-└── work/
-```
-
-Start Tomcat:
-
-```bash
-sudo /opt/tomcat9/bin/startup.sh
-```
-
-Stop Tomcat:
-
-```bash
-sudo /opt/tomcat9/bin/shutdown.sh
-```
-
-Check port:
-
-```bash
-sudo ss -lntp | grep 8080
-```
-
-Test locally:
-
-```bash
-curl -I http://localhost:8080/
-```
-
----
-
-# 8️⃣ Tomcat Manager
-
-Tomcat Manager URL:
-
-```text
-http://<EC2-PUBLIC-IP>:8080/manager/html
-```
-
-The Manager configuration is located at:
-
-```text
-/opt/tomcat9/webapps/manager/META-INF/context.xml
-```
-
-The Tomcat users configuration is:
-
-```text
-/opt/tomcat9/conf/tomcat-users.xml
-```
-
-Example Manager user:
-
-```xml
-<role rolename="manager-gui"/>
-<user username="tomcat"
-      password="your-password"
-      roles="manager-gui"/>
-```
-
----
-
-# 9️⃣ EC2 Deployment
-
-This project can be deployed on an AWS EC2 instance.
-
-Architecture:
-
-```mermaid
-flowchart TD
-    A[Developer] --> B[GitHub Repository]
-    B --> C[EC2 Ubuntu Server]
-
-    C --> D[Maven]
-    D --> E[buildMaven.sh]
-    E --> F[WAR Artifact]
-    F --> G[Tomcat 9]
-
-    G --> H[Port 8080]
-    H --> I[Internet]
-```
-
-The EC2 Security Group should allow TCP port:
-
-```text
-8080
-```
-
-Then the application can be accessed using:
-
-```text
-http://EC2-PUBLIC-IP:8080/
-```
-
----
-
-# 🔟 Optional — Generate Documentation
-
-Command:
-
-```bash
-./buildMaven.sh -doc
-```
-
-Equivalent Maven command:
-
-```bash
-mvn site
-```
-
-Documentation is generated under:
-
-```text
-target/site/
-```
-
-### Figure
-
-```mermaid
-flowchart LR
-    A[pom.xml + Source Code] --> B[mvn site]
-    B --> C[Maven Site]
-    C --> D[target/site/]
-```
-
----
-
-# 1️⃣1️⃣ Optional — Build Quality Thresholds
-
-The assignment also provides an optional requirement to fail the build when quality thresholds are not met.
-
-Possible thresholds:
-
-```text
-Code Coverage >= 80%
-Checkstyle violations <= allowed limit
-FindBugs violations <= allowed limit
-PMD violations <= allowed limit
-```
-
-### Figure — Quality Gate
-
-```mermaid
-flowchart TD
-    A[Maven Build] --> B[Quality Checks]
-
-    B --> C[Checkstyle]
-    B --> D[FindBugs]
-    B --> E[PMD]
-    B --> F[Code Coverage]
-
-    C --> G{Thresholds Passed?}
-    D --> G
-    E --> G
-    F --> G
-
-    G -->|YES| H[BUILD SUCCESS]
-    G -->|NO| I[BUILD FAILURE]
-```
-
----
-
-# 1️⃣2️⃣ Complete Command List
+#  Complete Command List
 
 Run all commands from the Maven project directory:
 
@@ -735,6 +583,8 @@ cd ~/spring3hibernate
 ```bash
 ./buildMaven.sh -h
 ```
+<img width="596" height="386" alt="image" src="https://github.com/user-attachments/assets/7725c01a-c30a-4a12-943c-c9273b96ec9a" />
+
 
 ### Generate artifact
 
@@ -776,12 +626,6 @@ cd ~/spring3hibernate
 
 ```bash
 ./buildMaven.sh -d
-```
-
-### Documentation
-
-```bash
-./buildMaven.sh -doc
 ```
 
 ---
