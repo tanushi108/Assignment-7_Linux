@@ -282,7 +282,6 @@ Check:
 ```bash
 ls ~/.m2/repository/
 ```
-<img width="1089" height="408" alt="image" src="https://github.com/user-attachments/assets/ea770275-3151-4058-a0e7-2a264b497b89" />
 
 ---
 
@@ -311,17 +310,8 @@ Run:
 ```bash
 ./buildMaven.sh -s checkstyle
 ```
+<img width="1089" height="408" alt="image" src="https://github.com/user-attachments/assets/ea770275-3151-4058-a0e7-2a264b497b89" />
 
-Checkstyle checks source code against coding and formatting standards.
-
-### Figure
-
-```mermaid
-flowchart TD
-    A[Java Source Code] --> B[Checkstyle]
-    B --> C[Style Rules]
-    C --> D[Violations / Report]
-```
 
 <img width="525" height="67" alt="image" src="https://github.com/user-attachments/assets/99c354aa-e646-4ea6-8a39-384f0b4bafbb" />
 
