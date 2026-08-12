@@ -580,7 +580,7 @@ cd ~/spring3hibernate
 
 ---
 
-# 1️⃣3️⃣ Complete Assignment Workflow
+# Complete Assignment Workflow
 
 ```mermaid
 flowchart TD
@@ -610,7 +610,7 @@ flowchart TD
 
 ---
 
-# 1️⃣4️⃣ Final Result
+# Final Result
 
 The assignment combines:
 
@@ -672,3 +672,5 @@ It simplifies the process of:
 7. Deploying the application to Tomcat
 8. Generating documentation
 9. Applying optional quality gates
+
+**Author:** Tanushi Rana
