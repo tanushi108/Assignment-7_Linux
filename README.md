@@ -236,6 +236,7 @@ Check the artifact:
 ```bash
 ls -lh target/
 ```
+<img width="693" height="354" alt="image" src="https://github.com/user-attachments/assets/ba80113b-1113-447d-8db9-9993bbfb190a" />
 
 ---
 
@@ -315,9 +316,6 @@ Run:
 
 <img width="525" height="67" alt="image" src="https://github.com/user-attachments/assets/99c354aa-e646-4ea6-8a39-384f0b4bafbb" />
 
-<img width="917" height="34" alt="image" src="https://github.com/user-attachments/assets/78f8543b-14de-477f-877b-343a5e1f53c1" />
-
-
 ---
 
 ## 🔹 FindBugs
@@ -328,36 +326,9 @@ Run:
 ./buildMaven.sh -s findbugs
 ```
 
-FindBugs analyzes Java code for possible bugs and problematic coding patterns.
-
-Example findings from this project include:
-
-```text
-NM_FIELD_NAMING_CONVENTION
-PT_RELATIVE_PATH_TRAVERSAL
-SE_NO_SERIALVERSIONID
-```
 <img width="1365" height="492" alt="image" src="https://github.com/user-attachments/assets/fe2cc46f-0a80-41d8-9029-0cb8c5fa5be6" />
 
 <img width="743" height="650" alt="image" src="https://github.com/user-attachments/assets/2c939e8d-b34d-401c-ada7-b7f52590dbcb" />
-
-### Figure
-
-```mermaid
-flowchart TD
-    A[Java Classes] --> B[FindBugs]
-    B --> C[Bytecode Analysis]
-    C --> D[Potential Bugs]
-    D --> E[FindBugs Report]
-```
-
-The project configuration contains:
-
-```xml
-<failOnError>false</failOnError>
-```
-
-Therefore, reported FindBugs issues do not automatically fail the Maven build.
 
 ---
 
@@ -367,17 +338,6 @@ Run:
 
 ```bash
 ./buildMaven.sh -s pmd
-```
-
-PMD performs static source-code analysis and identifies potential code-quality problems.
-
-### Figure
-
-```mermaid
-flowchart TD
-    A[Source Code] --> B[PMD]
-    B --> C[Code Quality Rules]
-    C --> D[PMD Report]
 ```
 
 <img width="893" height="402" alt="image" src="https://github.com/user-attachments/assets/3fbdacb0-9657-49a5-b7dd-e14a40ab5038" />
